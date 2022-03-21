@@ -1,0 +1,28 @@
+<h2>users listing page</h2>
+<table>
+  <thead>
+     <tr>
+        <th>first_name &emsp;</th>
+        <th>last_name&emsp;</th>
+        <th>phone_number&emsp;</th>
+        <th>action&emsp;</th> 
+     </tr>
+
+  </thead>
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.phone_number %></td>
+            <td><%= link_to 'Show', bank_account_path(user) %></td>
+            <td><%= link_to 'address',address_path(user) %></td>
+            
+            
+        </tr>
+        <% end %>
+    <tbody>
+</table>
+<p>
+  <%= link_to 'Create new user', new_user_path %>
+</p>

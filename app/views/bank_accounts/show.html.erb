@@ -1,0 +1,7 @@
+<% @bank_account.each do |bank_account| %>
+    
+<p><strong>ACCOUNT NUMBER:   </strong><%=bank_account.account_number %></p>
+<p><strong>:IFSC CODE    </strong><%=bank_account.ifsc_code%>
+<p><strong>BRANCH NAME:   </strong><%=bank_account.branch_name%>
+
+<% end %>

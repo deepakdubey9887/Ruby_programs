@@ -1,0 +1,24 @@
+<table>
+  <thead>
+     <tr>
+        <th>accoutn number&emsp;</th>
+        <th>ifsc code&emsp;</th>
+        <th>branch name&emsp;</th>
+        <th>action&emsp;</th> 
+     </tr>
+
+  </thead>
+    <tbody>
+        <% @bank_accounts.each do |account| %>
+        <tr>
+            <td><%= account.account_number %></td>
+            <td><%= account.ifsc_code %></td>
+            <td><%= account.branch_name %></td>
+             <td><%= link_to 'user_details', user_path(account)%></td>  
+            <%# <td><%= user.bank_accounts</td>  %>
+            
+            
+        </tr>
+        <% end %>
+    <tbody>
+</table>
