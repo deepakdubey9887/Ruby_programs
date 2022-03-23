@@ -1,5 +1,5 @@
-<h1>create user here</h1>
-<%= form_with model: @user do |f| %>
+<h1>edit user here</h1>
+<%= form_for @user do |f| %>
   <p>
     <%= f.label :first_name%><br/> 
     <%= f.text_field :first_name %>
@@ -15,7 +15,7 @@
   
   </p>
      <p>
-     <%= f.fields_for :address do |ff| %>
+     <%= f.fields_for :address, @user.address do |ff| %>
       <p> 
       <%= ff.label :address %><br/>
       <%= ff.text_field :address %>
@@ -24,7 +24,7 @@
      </p>
  
      <p>
-    <%= f.fields_for :bank_accounts do |fff| %>
+    <%= f.fields_for :bank_accounts, @user.bank_accounts do |fff| %>
       <p> 
       <%= fff.label :account_number%><br/>
       <%= fff.text_field :account_number %>

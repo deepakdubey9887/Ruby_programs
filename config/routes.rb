@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :users  #,only:[:show, :index :new :create]
     resources :bank_accounts  
-    resources :addresses ,only:[:show]                             #today's edit
+    resources :addresses ,only:[:show, :create]                            #today's edit
     #resources :bank_accounts ,only:[:show]
   # Defines the root path route ("/")
   # root "articles#index"
