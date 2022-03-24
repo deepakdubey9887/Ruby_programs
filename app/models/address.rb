@@ -1,4 +1,5 @@
 class Address<ApplicationRecord
-belongs_to :user
+    validates :address, presence: true
+    belongs_to :user
 end
     

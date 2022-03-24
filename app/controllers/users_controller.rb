@@ -20,6 +20,12 @@ class UsersController < ApplicationController
     2.times { @user.bank_accounts.build }
        
     @user.build_address
+   
+   
+    #user=User.new
+    #@bank_account=user.bank_accounts
+    #@address =user.address
+
      # this is a new edit (above two lines)
    end
   def edit 
@@ -36,11 +42,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     #white listing the users required attributes
     
-    @user.save
-    
+    if @user.save
+      flash[:notice] = 'User was saved.'
+      redirect_to users_path
+    else 
+      flash[:notice] = 'User was not saved.'
+      render :new
+    end
 
     
-    redirect_to users_path
+    
     
   end
   
