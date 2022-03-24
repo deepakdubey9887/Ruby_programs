@@ -23,9 +23,10 @@
      <% end %>
      </p>
  
-     <p>
-    <%= f.fields_for :bank_accounts do |fff| %>
-      <p> 
+    <p>
+     <%= f.fields_for :bank_accounts do |fff| %>
+       <%#=#render 'bank_accounts_fields' , f: fff #ths is temp%>
+      <p>
       <%= fff.label :account_number%><br/>
       <%= fff.text_field :account_number %>
       </p>
@@ -36,11 +37,11 @@
       <p>
       <%= fff.label :branch_name%><br/>
       <%= fff.text_field :branch_name %>
-
+      
       </p>
-      <p>
+     
       <%#= fff.submit #this is a try for multiple account%>                            
-      </p>
+      
      <% end %>
      
   <p>
